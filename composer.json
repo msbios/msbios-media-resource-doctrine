@@ -1,0 +1,53 @@
+{
+  "name": "msbios/media-resource-doctrine",
+  "description": "MSBios Media Resource Doctrine",
+  "license": "MIT",
+  "keywords": [
+    "php"
+  ],
+  "homepage": "https://github.com/msbios/msbios-media-resource-doctrine",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Judzhin Miles",
+      "email": "info@msbios.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "MSBios\\Media\\Resource\\Doctrine\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MSBiosTest\\Media\\Resource\\Doctrine\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "msbios/resource": "^1.0",
+    "msbios/authentication": "^1.0",
+    "msbios/guard": "^1.0",
+    "msbios/guard-resource": "^1.0",
+    "msbios/resource-doctrine": "^1.0",
+    "msbios/guard-resource-doctrine": "^1.0",
+    "msbios/debug": "^1.0",
+    "msbios/test": "^1.0"
+  },
+  "scripts": {
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "test": [
+      "@cs-check",
+      "phpunit --colors=always"
+    ],
+    "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+    "upload-coverage": "coveralls -v",
+    "alter": "./vendor/bin/doctrine-module orm:schema-tool:update --force",
+    "commit": "git add . && git commit -a -m \"Lazy Composer Commiter\" && git push"
+  },
+  "extra": {
+    "zf": {
+      "component": "MSBios\\Media\\Resource\\Doctrine"
+    }
+  }
+}
