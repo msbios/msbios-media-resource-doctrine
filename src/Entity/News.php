@@ -7,6 +7,7 @@
 namespace MSBios\Media\Resource\Doctrine\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use MSBios\Guard\Resource\Doctrine\BlameableAwareInterface;
 use MSBios\Guard\Resource\Doctrine\BlameableAwareTrait;
 use MSBios\Media\Resource\Doctrine\Entity;
@@ -57,9 +58,10 @@ class News extends Entity implements
     private $type = self::TYPE_NONE;
 
     /**
-     * @var string
      *
-     * @ORM\Column(name="slug", type="string", length=255, nullable=false)
+     * @var string
+     * @Gedmo\Slug(fields={"title"})
+     * @ORM\Column(name="slug", length=128, unique=true)
      */
     private $slug;
 
