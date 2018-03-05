@@ -21,7 +21,7 @@ use MSBios\Resource\Doctrine\TimestampableAwareTrait;
  * Class News
  * @package MSBios\Media\Resource\Doctrine\Entity
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MSBios\Media\Resource\Doctrine\Repository\NewsRepository")
  * @ORM\Table(name="cnt_t_news",
  *     indexes={
  *          @ORM\Index(name="rowstatus", columns={"rowstatus"})}
