@@ -8,6 +8,7 @@ namespace MSBios\Media\Resource\Doctrine\Repository;
 
 use Doctrine\ORM\EntityRepository;
 use MSBios\Resource\Doctrine\Repository\PaginatorRepositoryTrait;
+use Zend\Paginator\Paginator;
 
 /**
  * Class NewsRepository
@@ -20,12 +21,14 @@ class NewsRepository extends EntityRepository
     /**
      * @param int $page
      * @param int $limit
-     * @return mixed
+     * @return Paginator
      */
     public function getPaginator($page = 1, $limit = 20)
     {
-        return $this->buildPaginator($this->createQueryBuilder('n'))
-            ->setDefaultItemCountPerPage($limit)
-            ->setCurrentPageNumber($page);
+        /** @var Paginator $paginator */
+        $paginator = $this->buildPaginator($this->createQueryBuilder('n'));
+        $paginator->setDefaultItemCountPerPage($limit);
+        $paginator->setCurrentPageNumber($page);
+        return $paginator;
     }
 }
