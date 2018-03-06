@@ -2016,16 +2016,16 @@
         },
         {
             "name": "msbios/resource-doctrine",
-            "version": "v1.0.17",
+            "version": "v1.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-resource-doctrine.git",
-                "reference": "4dfca06adff2f71f8c80e634028aa11697afd354"
+                "reference": "f66d2b20eabf57482605e6eae54b439da24fc4e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-resource-doctrine/zipball/4dfca06adff2f71f8c80e634028aa11697afd354",
-                "reference": "4dfca06adff2f71f8c80e634028aa11697afd354",
+                "url": "https://api.github.com/repos/msbios/msbios-resource-doctrine/zipball/f66d2b20eabf57482605e6eae54b439da24fc4e6",
+                "reference": "f66d2b20eabf57482605e6eae54b439da24fc4e6",
                 "shasum": ""
             },
             "require": {
@@ -2065,7 +2065,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-03-05T16:01:40+00:00"
+            "time": "2018-03-06T08:36:37+00:00"
         },
         {
             "name": "msbios/stdlib",
@@ -3582,7 +3582,7 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.4.5",
+            "version": "v3.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -3651,7 +3651,7 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.0.5",
+            "version": "v4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
@@ -3766,7 +3766,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.0.5",
+            "version": "v4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
