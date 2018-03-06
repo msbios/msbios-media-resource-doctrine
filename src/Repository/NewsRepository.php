@@ -76,29 +76,22 @@ class NewsRepository extends EntityRepository
                 /** @var array $values */
                 $values = $inputFilter->getValues();
 
-                if (!empty($values['title'])) {
+                if (! empty($values['title'])) {
                     $qb->where('n.title LIKE :title')
                         ->setParameter('title', "{$values['title']}%");
                 }
 
-                if (!empty($values['postdate']['from']) && !empty($values['postdate']['to'])) {
-
+                if (! empty($values['postdate']['from']) && ! empty($values['postdate']['to'])) {
                     $qb->andWhere('n.postdate BETWEEN :from AND :to')
                         ->setParameter('from', new \DateTime($values['postdate']['from']), Type::DATETIME)
                         ->setParameter('to', new \DateTime($values['postdate']['to']), Type::DATETIME);
-
-                } elseif (!empty($values['postdate']['from'])) {
-
+                } elseif (! empty($values['postdate']['from'])) {
                     $qb->andWhere('n.postdate > :from')
                         ->setParameter('from', new \DateTime($values['postdate']['from']), Type::DATETIME);
-
-                } elseif (!empty($values['postdate']['to'])) {
-
+                } elseif (! empty($values['postdate']['to'])) {
                     $qb->andWhere('n.postdate < :to')
                         ->setParameter('to', new \DateTime($values['postdate']['to']), Type::DATETIME);
-
                 }
-
             }
         });
     }
