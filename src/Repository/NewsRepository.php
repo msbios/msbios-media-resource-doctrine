@@ -47,9 +47,11 @@ class NewsRepository extends EntityRepository
 
     /**
      * @param array $params
+     * @param int $page
+     * @param int $limit
      * @return Paginator
      */
-    public function getPaginatorFromQuery(array $params)
+    public function getPaginatorFromQuery(array $params, $page = 1, $limit = 20)
     {
         /** @var InputFilterInterface $factory */
         $inputFilter = (new Factory)->createInputFilter([
@@ -93,6 +95,6 @@ class NewsRepository extends EntityRepository
                         ->setParameter('to', new \DateTime($values['postdate']['to']), Type::DATETIME);
                 }
             }
-        });
+        }, $page, $limit);
     }
 }
