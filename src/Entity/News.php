@@ -122,7 +122,7 @@ class News extends Entity implements
     /**
      * @return string
      */
-    public function getSlug(): string
+    public function getSlug()
     {
         return $this->slug;
     }
@@ -131,7 +131,7 @@ class News extends Entity implements
      * @param string $slug
      * @return $this
      */
-    public function setSlug(string $slug)
+    public function setSlug($slug)
     {
         $this->slug = $slug;
         return $this;
