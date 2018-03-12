@@ -19,5 +19,12 @@ return [
                 ],
             ],
         ],
+        'eventmanager' => [
+            'orm_default' => [
+                'subscribers' => [
+                    \Gedmo\Sluggable\SluggableListener::class,
+                ]
+            ]
+        ],
     ],
 ];
