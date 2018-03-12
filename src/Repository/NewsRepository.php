@@ -9,10 +9,10 @@ namespace MSBios\Media\Resource\Doctrine\Repository;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
+use MSBios\Doctrine\DBAL\Types\PublishingStateType;
 use MSBios\Resource\Doctrine\Repository\PaginatorRepositoryTrait;
 use Zend\InputFilter\Factory;
 use Zend\InputFilter\InputFilter;
-use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 use Zend\Paginator\Paginator;
 
@@ -74,13 +74,16 @@ class NewsRepository extends EntityRepository
 
         return $this->getPaginatorWith(function (QueryBuilder $qb) use ($inputFilter) {
 
+            $qb->where('n.rowStatus = :rowStatus')
+                ->setParameter('rowStatus', 1);
+
             if ($inputFilter->isValid()) {
 
                 /** @var array $values */
                 $values = $inputFilter->getValues();
 
                 if (! empty($values['title'])) {
-                    $qb->where('n.title LIKE :title')
+                    $qb->andWhere('n.title LIKE :title')
                         ->setParameter('title', "{$values['title']}%");
                 }
 
@@ -100,5 +103,24 @@ class NewsRepository extends EntityRepository
                 }
             }
         }, $page, $limit);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function countPublished()
+    {
+        /** @var QueryBuilder $qb */
+        $qb = $this->createQueryBuilder('n');
+        $qb->select($qb->expr()->count('n'))
+            ->where('n.state = :state')
+            ->andWhere('n.rowStatus = :rowStatus')
+            ->andWhere('n.postdate < :to')
+            ->setParameter('state', PublishingStateType::PUBLISHING_STATE_PUBLISHED)
+            ->setParameter('rowStatus', 1)
+            ->setParameter('to', new \DateTime('now'), Type::DATETIME)
+        ;
+
+        return $qb->getQuery()->getSingleScalarResult();
     }
 }
