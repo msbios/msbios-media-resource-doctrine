@@ -93,6 +93,9 @@ class NewsRepository extends EntityRepository
                 } elseif (! empty($values['postdate']['to'])) {
                     $qb->andWhere('n.postdate < :to')
                         ->setParameter('to', new \DateTime($values['postdate']['to']), Type::DATETIME);
+                } else {
+                    $qb->andWhere('n.postdate < :now')
+                        ->setParameter('now', new \DateTime('now'), Type::DATETIME);
                 }
             }
         }, $page, $limit);
