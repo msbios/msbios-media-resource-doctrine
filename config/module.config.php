@@ -5,6 +5,8 @@
  */
 namespace MSBios\Media\Resource\Doctrine;
 
+use Zend\ServiceManager\Factory\InvokableFactory;
+
 return [
 
     'doctrine' => [
@@ -45,8 +47,10 @@ return [
         ],
     ],
 
-    'input_filter_specs' => [
-
-    ]
-
+    'form_elements' => [
+        'factories' => [
+            Form\NewsForm::class =>
+                InvokableFactory::class,
+        ]
+    ],
 ];

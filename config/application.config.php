@@ -14,6 +14,7 @@ return [
         'DoctrineModule',
         'DoctrineORMModule',
 
+        'MSBios\Doctrine',
         'MSBios\Resource',
         'MSBios\Guard\Resource',
         'MSBios\Resource\Doctrine',

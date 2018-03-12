@@ -81,6 +81,13 @@ class News extends Entity implements
     private $postdate;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="publishing_state")
+     */
+    private $state;
+
+    /**
      * @return string
      */
     public function getTitle(): string
@@ -163,6 +170,24 @@ class News extends Entity implements
     public function setPostdate(\DateTime $postdate)
     {
         $this->postdate = $postdate;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getState(): string
+    {
+        return $this->state;
+    }
+
+    /**
+     * @param string $state
+     * @return $this
+     */
+    public function setState(string $state)
+    {
+        $this->state = $state;
         return $this;
     }
 }
