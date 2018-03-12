@@ -34,6 +34,7 @@ class NewsRepository extends EntityRepository
     {
         /** @var QueryBuilder $qb */
         $qb = $this->createQueryBuilder('n');
+        $qb->orderBy('n.postdate', 'DESC');
 
         /** Execute colosure */
         $closure($qb);
