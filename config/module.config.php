@@ -51,6 +51,8 @@ return [
         'factories' => [
             Form\NewsForm::class =>
                 InvokableFactory::class,
+            Form\Element\NewsType::class =>
+                InvokableFactory::class
         ]
     ],
 ];

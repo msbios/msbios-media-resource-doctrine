@@ -33,6 +33,9 @@ class NewsForm extends Form
             'type' => Text::class,
             'name' => 'slug'
         ])->add([
+            'type' => Element\NewsType::class,
+            'name' => 'type'
+        ])->add([
             'type' => Textarea::class,
             'name' => 'content'
         ])->add([
