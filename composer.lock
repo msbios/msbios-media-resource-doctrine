@@ -1817,16 +1817,16 @@
         },
         {
             "name": "msbios/guard-resource-doctrine",
-            "version": "v1.0.34",
+            "version": "v1.0.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-guard-resource-doctrine.git",
-                "reference": "12369135f2e72c2d4f16f40c08c38c966dcd0ce6"
+                "reference": "4e7ac817bff3ee2cb7aba1ca095d25be8cbcac70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-guard-resource-doctrine/zipball/12369135f2e72c2d4f16f40c08c38c966dcd0ce6",
-                "reference": "12369135f2e72c2d4f16f40c08c38c966dcd0ce6",
+                "url": "https://api.github.com/repos/msbios/msbios-guard-resource-doctrine/zipball/4e7ac817bff3ee2cb7aba1ca095d25be8cbcac70",
+                "reference": "4e7ac817bff3ee2cb7aba1ca095d25be8cbcac70",
                 "shasum": ""
             },
             "require-dev": {
@@ -1857,7 +1857,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL"
+                "MIT"
             ],
             "authors": [
                 {
@@ -1870,7 +1870,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-03-03T10:34:00+00:00"
+            "time": "2018-03-21T11:44:03+00:00"
         },
         {
             "name": "msbios/json",
@@ -1970,16 +1970,16 @@
         },
         {
             "name": "msbios/resource",
-            "version": "v1.0.7",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-resource.git",
-                "reference": "75300d748aa916ba66ad03484c5826efbf0db9ca"
+                "reference": "c2a1bd9f63183f846d23b47f27aadbff76f22ffc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-resource/zipball/75300d748aa916ba66ad03484c5826efbf0db9ca",
-                "reference": "75300d748aa916ba66ad03484c5826efbf0db9ca",
+                "url": "https://api.github.com/repos/msbios/msbios-resource/zipball/c2a1bd9f63183f846d23b47f27aadbff76f22ffc",
+                "reference": "c2a1bd9f63183f846d23b47f27aadbff76f22ffc",
                 "shasum": ""
             },
             "require": {
@@ -1999,7 +1999,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL"
+                "MIT"
             ],
             "authors": [
                 {
@@ -2012,20 +2012,20 @@
             "keywords": [
                 "php"
             ],
-            "time": "2017-11-26T19:34:01+00:00"
+            "time": "2018-03-21T11:21:27+00:00"
         },
         {
             "name": "msbios/resource-doctrine",
-            "version": "v1.0.20",
+            "version": "v1.0.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-resource-doctrine.git",
-                "reference": "f66d2b20eabf57482605e6eae54b439da24fc4e6"
+                "reference": "90e712169476c1981dc7792c1585d118f21f21c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-resource-doctrine/zipball/f66d2b20eabf57482605e6eae54b439da24fc4e6",
-                "reference": "f66d2b20eabf57482605e6eae54b439da24fc4e6",
+                "url": "https://api.github.com/repos/msbios/msbios-resource-doctrine/zipball/90e712169476c1981dc7792c1585d118f21f21c6",
+                "reference": "90e712169476c1981dc7792c1585d118f21f21c6",
                 "shasum": ""
             },
             "require": {
@@ -2065,7 +2065,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-03-06T08:36:37+00:00"
+            "time": "2018-03-20T11:12:57+00:00"
         },
         {
             "name": "msbios/stdlib",
@@ -3824,16 +3824,16 @@
         },
         {
             "name": "tracy/tracy",
-            "version": "v2.4.12",
+            "version": "v2.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tracy.git",
-                "reference": "4182ce7b92f67002509b7fa2fc34bd84deea0b24"
+                "reference": "ead5141731a21cfd0710b092351d923549d2b2ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tracy/zipball/4182ce7b92f67002509b7fa2fc34bd84deea0b24",
-                "reference": "4182ce7b92f67002509b7fa2fc34bd84deea0b24",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/ead5141731a21cfd0710b092351d923549d2b2ad",
+                "reference": "ead5141731a21cfd0710b092351d923549d2b2ad",
                 "shasum": ""
             },
             "require": {
@@ -3885,7 +3885,7 @@
                 "nette",
                 "profiler"
             ],
-            "time": "2018-02-28T00:49:47+00:00"
+            "time": "2018-03-23T17:15:58+00:00"
         },
         {
             "name": "webmozart/assert",

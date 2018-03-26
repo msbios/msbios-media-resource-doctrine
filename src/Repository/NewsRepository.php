@@ -10,6 +10,8 @@ use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use MSBios\Doctrine\DBAL\Types\PublishingStateType;
+use MSBios\Doctrine\Form\Element\PublishingState;
+use MSBios\Guard\Resource\Form\Element\StateRadio;
 use MSBios\Resource\Doctrine\Repository\PaginatorRepositoryTrait;
 use Zend\InputFilter\Factory;
 use Zend\InputFilter\InputFilter;
@@ -72,10 +74,15 @@ class NewsRepository extends EntityRepository
             ]
         ])->setData($params);
 
-        return $this->getPaginatorWith(function (QueryBuilder $qb) use ($inputFilter) {
+        /**
+         * @param QueryBuilder $qb
+         */
+        $func = function (QueryBuilder $qb) use ($inputFilter) {
 
             $qb->where('n.rowStatus = :rowStatus')
-                ->setParameter('rowStatus', 1);
+                ->andWhere('n.state = :state')
+                ->setParameter('state', PublishingStateType::PUBLISHING_STATE_PUBLISHED)
+                ->setParameter('rowStatus', true);
 
             if ($inputFilter->isValid()) {
 
@@ -102,7 +109,9 @@ class NewsRepository extends EntityRepository
                         ->setParameter('now', new \DateTime('now'), Type::DATETIME);
                 }
             }
-        }, $page, $limit);
+        };
+
+        return $this->getPaginatorWith($func, $page, $limit);
     }
 
     /**
