@@ -27,6 +27,29 @@ class NewsRepository extends EntityRepository
     use PaginatorRepositoryTrait;
 
     /**
+     * @param int $page
+     * @param int $limit
+     * @return Paginator
+     */
+    public function getPaginatorPublished($page = 1, $limit = 20)
+    {
+        /** @var QueryBuilder $qb */
+        $qb = $this->createQueryBuilder('n')
+            ->where('n.rowStatus = :rowStatus')
+            ->andWhere('n.state = :state')
+            ->setParameter('state', PublishingStateType::PUBLISHING_STATE_PUBLISHED)
+            ->setParameter('rowStatus', true)
+            ->orderBy('n.postdate', 'DESC')
+        ;
+
+        /** @var Paginator $paginator */
+        $paginator = $this->buildPaginator($qb);
+        $paginator->setItemCountPerPage($limit);
+        $paginator->setCurrentPageNumber($page);
+        return $paginator;
+    }
+
+    /**
      * @param callable $closure
      * @param int $page
      * @param int $limit
@@ -43,7 +66,7 @@ class NewsRepository extends EntityRepository
 
         /** @var Paginator $paginator */
         $paginator = $this->buildPaginator($qb);
-        $paginator->setDefaultItemCountPerPage($limit);
+        $paginator->setItemCountPerPage($limit);
         $paginator->setCurrentPageNumber($page);
         return $paginator;
     }

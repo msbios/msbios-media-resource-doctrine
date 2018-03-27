@@ -21,7 +21,7 @@ class Module implements
     AutoloaderAwareInterface
 {
     /** @const VERSION */
-    const VERSION = '1.0.16';
+    const VERSION = '1.0.17';
 
     /**
      * Returns configuration to merge with application configuration
