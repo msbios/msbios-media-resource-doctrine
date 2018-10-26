@@ -27,6 +27,9 @@ class NewsRepository extends EntityRepository
 {
     use PaginatorRepositoryTrait;
 
+    /** @const DEFAULT_ALIAS */
+    const DEFAULT_ALIAS = 'n';
+
     ///**
     // * @param int $page
     // * @param int $limit
