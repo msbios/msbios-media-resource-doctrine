@@ -8,7 +8,6 @@ namespace MSBios\Media\Resource\Doctrine;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
-
     'doctrine' => [
         'configuration' => [
             'orm_default' => [
@@ -40,8 +39,7 @@ return [
         'entity_resolver' => [
             'orm_default' => [
                 'resolvers' => [
-                    // ProviderInterface::class =>
-                    //     Entity\Provider::class,
+                    // ...
                 ],
             ],
         ],
