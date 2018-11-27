@@ -7,11 +7,8 @@
 namespace MSBios\Media\Resource\Doctrine\Form;
 
 use MSBios\Doctrine\Form\Element\PublishingState;
-use Zend\Form\Element\Collection;
-use Zend\Form\Element\DateTime;
-use Zend\Form\Element\Hidden;
-use Zend\Form\Element\Text;
-use Zend\Form\Element\Textarea;
+use MSBios\Media\Resource\Doctrine\Form\Element\NewsType;
+use Zend\Form\Element;
 use Zend\Form\ElementInterface;
 use Zend\Form\Fieldset;
 use Zend\Form\Form;
@@ -35,52 +32,52 @@ class NewsForm extends Form
 
         /** @var ElementInterface $thumb */
         $thumb = (new Fieldset('thumb'))->add([
-            'type' => Hidden::class,
+            'type' => Element\Hidden::class,
             'name' => 'width'
         ])->add([
-            'type' => Hidden::class,
+            'type' => Element\Hidden::class,
             'name' => 'height'
         ])->add([
-            'type' => Hidden::class,
+            'type' => Element\Hidden::class,
             'name' => 'src'
         ]);
 
         /** @var ElementInterface $image */
         $image = (new Fieldset)
             ->add([
-                'type' => Hidden::class,
+                'type' => Element\Hidden::class,
                 'name' => 'name'
             ])->add([
-                'type' => Hidden::class,
+                'type' => Element\Hidden::class,
                 'name' => 'type'
             ])->add([
-                'type' => Hidden::class,
+                'type' => Element\Hidden::class,
                 'name' => 'width'
             ])->add([
-                'type' => Hidden::class,
+                'type' => Element\Hidden::class,
                 'name' => 'height'
             ])->add([
-                'type' => Hidden::class,
+                'type' => Element\Hidden::class,
                 'name' => 'src'
             ])->add([
-                'type' => Hidden::class,
+                'type' => Element\Hidden::class,
                 'name' => 'size'
             ])->add([
-                'type' => Hidden::class,
+                'type' => Element\Hidden::class,
                 'name' => 'error'
             ])->add($thumb);
 
         /** @var ElementInterface $image */
         $video = (new Fieldset('video'))
             ->add([
-                'type' => Text::class,
+                'type' => Element\Text::class,
                 'name' => 'src'
             ]);
 
         $options->add($video);
 
         /** @var ElementInterface $images */
-        $images = (new Collection('images'))
+        $images = (new Element\Collection('images'))
             ->setAllowAdd(true)
             ->setAllowRemove(true)
             ->setCount(0)
@@ -89,19 +86,19 @@ class NewsForm extends Form
         $options->add($images);
 
         $this->add([
-            'type' => Text::class,
+            'type' => Element\Text::class,
             'name' => 'title'
         ])->add([
-            'type' => Text::class,
+            'type' => Element\Text::class,
             'name' => 'slug'
         ])->add([
-            'type' => Element\NewsType::class,
+            'type' => NewsType::class,
             'name' => 'type'
         ])->add([
-            'type' => Textarea::class,
+            'type' => Element\Textarea::class,
             'name' => 'content'
         ])->add([
-            'type' => DateTime::class,
+            'type' => Element\DateTime::class,
             'name' => 'postdate',
             'options' => [
                 'format' => 'Y-m-d'

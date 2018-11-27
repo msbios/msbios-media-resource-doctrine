@@ -31,11 +31,9 @@ class NewsType extends EnumType
     }
 
     /**
-     * Gets the name of this type.
+     * @inheritdoc
      *
      * @return string
-     *
-     * @todo Needed?
      */
     public function getName()
     {

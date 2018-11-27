@@ -5,6 +5,7 @@
  */
 namespace MSBios\Media\Resource\Doctrine;
 
+use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
@@ -20,7 +21,7 @@ return [
         'driver' => [
             // defines an annotation driver with two paths, and names it `my_annotation_driver`
             Module::class => [
-                'class' => \Doctrine\ORM\Mapping\Driver\AnnotationDriver::class,
+                'class' => AnnotationDriver::class,
                 'cache' => 'array',
                 'paths' => [
                     __DIR__ . '/../src/Entity'

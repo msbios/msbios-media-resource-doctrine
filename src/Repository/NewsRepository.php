@@ -3,7 +3,6 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
-
 namespace MSBios\Media\Resource\Doctrine\Repository;
 
 use MSBios\Resource\Doctrine\EntityRepository;
