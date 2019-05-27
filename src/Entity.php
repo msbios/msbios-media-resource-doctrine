@@ -7,6 +7,7 @@
 namespace MSBios\Media\Resource\Doctrine;
 
 use MSBios\Resource\Doctrine\Entity as DefaultEntity;
+use MSBios\Resource\Doctrine\IdentifierAwareTrait;
 
 /**
  * Class Entity
@@ -14,5 +15,5 @@ use MSBios\Resource\Doctrine\Entity as DefaultEntity;
  */
 abstract class Entity extends DefaultEntity
 {
-    // ...
+    use IdentifierAwareTrait;
 }
