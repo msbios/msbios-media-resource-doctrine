@@ -8,6 +8,7 @@ namespace MSBios\Media\Resource\Doctrine\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use MSBios\Doctrine\IdentifierAwareTrait;
 use MSBios\Guard\Resource\Doctrine\BlameableAwareInterface;
 use MSBios\Guard\Resource\Doctrine\BlameableAwareTrait;
 use MSBios\Media\Resource\Doctrine\Entity;
@@ -34,6 +35,7 @@ class News extends Entity implements
     BlameableAwareInterface,
     RowStatusableAwareInterface
 {
+    use IdentifierAwareTrait;
     use OptionableAwareTrait;
     use TimestampableAwareTrait;
     use BlameableAwareTrait;
